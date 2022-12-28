@@ -1,4 +1,4 @@
-# AWS_SES
+# AWS_SES COLLECTOR
 Script do perform a collect in Amazon Simple Email Service and insert the consolidated data in Postgres DB.
 
 First things first:
