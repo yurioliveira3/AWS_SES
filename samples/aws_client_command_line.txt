@@ -1,0 +1,26 @@
+
+
+-- GET BASIC STATISTICS FROM SES
+aws ses get-send-statistics
+
+
+-- DISPLAY DISPONIBLE METRICS FROM cloudwatch IN namespace "AWS/SES"
+aws cloudwatch list-metrics --namespace "AWS/SES"
+
+-- Specifies namespace and the InstanceId dimension to view the results for the specified instance only.
+aws cloudwatch list-metrics --namespace AWS/SES --dimensions Name=InstanceId,Value=i-1234567890abcdef0
+
+-- Specifies the AWS/SES namespace and a metric name to view the results for the specified metric only.
+aws cloudwatch list-metrics --namespace AWS/SES --metric-name CPUUtilization
+
+
+
+-- GET DELIVERED MAILS
+aws cloudwatch get-metric-statistics --namespace AWS/SES --metric-name Delivery --statistics Sum --period 360 --start-time 2022-12-22T00:00:00Z --end-time 2022-12-22T23:59:59Z
+
+-- GET OPEN MAILS
+aws cloudwatch get-metric-statistics --namespace AWS/SES --metric-name Open --statistics Sum --period 360 --start-time 2022-12-22T00:00:00Z --end-time 2022-12-22T23:59:59Z
+
+-- GET CLICKER MAILS 
+aws cloudwatch get-metric-statistics --namespace AWS/SES --metric-name Click --statistics Sum --period 360 --start-time 2022-12-22T00:00:00Z --end-time 2022-12-22T23:59:59Z
+
